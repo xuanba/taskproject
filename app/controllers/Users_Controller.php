@@ -48,6 +48,11 @@ class UsersController extends AppController {
         }
     }
 
+    function view($id = null) {
+        $this->User->id = $id;
+        $this->set('user', $this->User->read());
+    }
+
     function hashPasswords($data) {
         if (isset($data['User']['password'])) {
             $data['User']['password'] = md5($data['User']['password']);

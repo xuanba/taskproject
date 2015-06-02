@@ -22,6 +22,7 @@
                 echo "<td>" . $item['User']['name'] . "</td>";
                 echo "<td>" . $item['User']['email'] . "</td>";
                 echo "<td>";
+                echo $this->Html->link('View', array('controller' => 'users', 'action' => 'view', $item['User']['id']));
                 echo $this->Html->link('Edit', array('action' => 'edit', $item['User']['id']));
                 echo $this->Html->link('Delete', array('action' => 'delete', $item['User']['id']), null, 'Are you sure?');
                 echo "</td>";
