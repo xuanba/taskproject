@@ -61,12 +61,4 @@ class UsersController extends AppController {
         return $data;
     }
 
-    function login() {
-        //empty
-    }
-
-    function logout() {
-        //empty
-    }
-
 }
