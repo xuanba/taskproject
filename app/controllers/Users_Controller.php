@@ -29,6 +29,13 @@ class UsersController extends AppController {
         }
     }
 
+    function delete($id) {
+        if ($this->User->delete($id)) {
+            $this->Session->setFlash('The user with id: ' . $id . ' has been deleted.');
+            $this->redirect(array('action' => 'index'));
+        }
+    }
+
     function hashPasswords($data) {
         if (isset($data['User']['password'])) {
             $data['User']['password'] = md5($data['User']['password']);
