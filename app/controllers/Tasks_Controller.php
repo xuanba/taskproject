@@ -21,6 +21,8 @@ class TasksController extends AppController {
     }
 
     function add() {
+        $this->loadModel('User');
+        $this->set('users', $this->User->find('list'));
         if (!empty($this->data)) {
             if ($this->Task->save($this->data)) {
                 $this->Session->setFlash('Task has been saved.');
