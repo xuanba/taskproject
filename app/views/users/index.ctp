@@ -1,6 +1,6 @@
 <html>
     <body>
-        
+
         <?php
         if ($data == NULL) {
             echo "<h2>Dada Empty</h2>";
@@ -21,7 +21,10 @@
                 echo "<td>" . $item['User']['role'] . "</td>";
                 echo "<td>" . $item['User']['name'] . "</td>";
                 echo "<td>" . $item['User']['email'] . "</td>";
-                echo "<td>" .$this->Html->link('Delete', array('action' => 'delete', $item['User']['id']), null, 'Are you sure?'). "</td>";
+                echo "<td>";
+                echo $this->Html->link('Edit', array('action' => 'edit', $item['User']['id']));
+                echo $this->Html->link('Delete', array('action' => 'delete', $item['User']['id']), null, 'Are you sure?');
+                echo "</td>";
                 echo "</tr>";
             }
         }
