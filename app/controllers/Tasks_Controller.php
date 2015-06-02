@@ -52,7 +52,7 @@ class TasksController extends AppController {
 
     function view($id = null) {
         $this->Task->id = $id;
-        $this->set('user', $this->Task->read());
+        $this->set('task', $this->Task->read());
     }
 
 }
