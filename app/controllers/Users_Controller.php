@@ -61,4 +61,17 @@ class UsersController extends AppController {
         return $data;
     }
 
+    function login() {
+        //empty
+    }
+
+    function logout() {
+        //empty
+    }
+
+    function beforeFilter() {
+        parent::beforeFilter();
+        $this->Auth->allow(array('*'));
+    }
+
 }
