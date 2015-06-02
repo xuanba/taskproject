@@ -29,6 +29,18 @@ class UsersController extends AppController {
         }
     }
 
+    function edit($id = null) {
+        $this->User->id = $id;
+        if (empty($this->data)) {
+            $this->data = $this->User->read();
+        } else {
+            if ($this->User->save($this->data)) {
+                $this->Session->setFlash('User has been updated.');
+                $this->redirect(array('action' => 'index'));
+            }
+        }
+    }
+
     function delete($id) {
         if ($this->User->delete($id)) {
             $this->Session->setFlash('The user with id: ' . $id . ' has been deleted.');
